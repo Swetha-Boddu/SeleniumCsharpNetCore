@@ -27,7 +27,9 @@ namespace SeleniumCsharpNetCore
             Driver.FindElement(By.XPath("//input[@name='ctl00$ContentPlaceHolder1$ChildMeal1']/following-sibling::div[text()='Celery']")).Click();
 
             // CustomControl control = new CustomControl();
-            CustomControl.combobox("ContentPlaceHolder1_AllMealsCombo", "Almond");            
+            CustomControl.combobox("ContentPlaceHolder1_AllMealsCombo", "Almond");
+
+            Console.WriteLine("Test1ContentPlaceHolder1_AllMealsCombo");
             Assert.Pass();
         }
     }
