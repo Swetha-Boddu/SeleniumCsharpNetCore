@@ -2,6 +2,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
+using SeleniumCsharpNetCore.Pages;
 
 namespace SeleniumCsharpNetCore
 {
@@ -31,6 +32,20 @@ namespace SeleniumCsharpNetCore
 
             Console.WriteLine("Test1ContentPlaceHolder1_AllMealsCombo");
             Assert.Pass();
+        }
+
+        [Test]
+        public void LoginTest()
+        {
+            Driver.Navigate().GoToUrl("http://eaapp.somee.com/");
+
+            homePage hompge = new homePage();
+            loginPage lgnpge = new loginPage();
+
+            hompge.clicklogin();
+            lgnpge.EnterUsernameandPassword("admin", "password");
+            lgnpge.ClickLogin();
+            Assert.That(hompge.islogOffExists(), Is.True, "Log off button not displayed");
         }
     }
 }
